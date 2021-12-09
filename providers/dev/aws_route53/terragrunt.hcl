@@ -13,10 +13,12 @@ dependencies {
 dependency "aws_alb"{
 	config_path = "../aws_alb"
 	mock_outputs = {
-		lb_dns_name = "arn:000"
+		lb_dns_name = "arn:aws:00000000000000000000000000000000000000000000000000000000000000000000000000000"
 		lb_zone_id = "AAAAAAA"
-		lb_arn = "arn:001"
-		lb_target_group_arn = "arn:002"
+		lb_arn = "arn:aws:00000000000000000000000000000000000000000000000000000000000000000000000000000"
+		lb_target_group_arn = "arn:aws:00000000000000000000000000000000000000000000000000000000000000000000000000000"
+
+		# arn:aws:elasticloadbalancing:eu-central-1:530117518858:targetgroup/java-bot-dev-target-group/8858ad80b91255f2
 	}
 }
 
