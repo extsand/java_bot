@@ -6,9 +6,10 @@ include {
 	path = find_in_parent_folders()
 }
 
-dependency "aws_ecr"{
-	config_path = "../aws_ecr"
+dependencies "aws_ecr"{
+	# config_path = "../aws_ecr"
 	# skip_outputs = true
+		paths = ["../aws_ecr"]
 }
 
 inputs = {
