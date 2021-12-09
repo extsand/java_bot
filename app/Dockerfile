@@ -36,7 +36,7 @@ ENV APP_BOT_TOKEN=$app_bot_token
 # COPY . .
 RUN env | grep "APP"
 
-COPY webhook-bot-0.0.1-SNAPSHOT.jar webhook-bot-0.0.1-SNAPSHOT.jar
+COPY ./target/webhook-bot-0.0.1-SNAPSHOT.jar webhook-bot-0.0.1-SNAPSHOT.jar
 # Strange command... not sure about it, but we should try with real LBs
 # RUN curl https://api.telegram.org/bot$BOT_TOKEN/setWebhook?url=$LOAD_BALANCER_LINK
 # curl https://api.telegram.org/bot_______/setWebhook?url=13.48.59.7

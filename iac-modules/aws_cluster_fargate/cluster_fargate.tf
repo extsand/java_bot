@@ -57,7 +57,7 @@ data "template_file" "app_container_template" {
 		app_port = var.app_port
 
 	
-		image_tag = var.image_tag
+		image_tag = var.app_tag
 
 		fargate_cpu = var.fargate_cpu
 		fargate_memory = var.fargate_memory

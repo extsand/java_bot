@@ -1,6 +1,7 @@
 # Custom gitignore
 credentials
 output-drafts.tf
+add_git_token-sample.sh
 
 #custom 
 *.tfstate

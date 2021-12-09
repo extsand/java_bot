@@ -13,28 +13,45 @@
 ## make build-app APP_NAME=example
 
 #app variables
-APP_NAME ?= example-java-bot
+APP_NAME ?= java-bot
 ENV_NAME ?= dev
-APP_TAG ?= init
+APP_TAG ?= latest
 APP_IMAGE = $(AWS_REPOSITORY_NAME):$(APP_TAG)
 
-#local var
-LOCAL_PORT ?= 80
+#aws variables 
+AWS_REGISTRY_ID ?= 530117518858
+AWS_REPOSITORY_REGION ?= eu-central-1
+AWS_PROFILE ?= academy
+AWS_REPOSITORY_NAME = $(AWS_REGISTRY_ID).dkr.ecr.$(AWS_REPOSITORY_REGION).amazonaws.com/$(APP_NAME)-$(ENV_NAME)
+
 
 #APP_WEBHOOK_LINK = https://telegrambotsimpl.herokuapp.com/
-APP_LOADBALANCER_LINK = https://sample1234567890
-APP_BOT_USERNAME = @sample1234567890
-APP_BOT_TOKEN = sample1234567890
+APP_LOADBALANCER_LINK = ${APP_LOADBALANCER_LINK_env}
+APP_BOT_USERNAME = ${APP_BOT_USERNAME_env}
+APP_BOT_TOKEN = ${APP_BOT_TOKEN_env}
+
 
 .PHONY:build-app
 build-app:
+	echo "Login to AWS"
+	$(MAKE) aws-ecr-login 
+	$(MAKE) create-app
 	echo "Build task started"
 	docker build --build-arg app_webhook_link=$(APP_LOADBALANCER_LINK)\
 				 --build-arg app_bot_username=$(APP_BOT_USERNAME)\
 				 --build-arg app_bot_token=$(APP_BOT_TOKEN)\
 				 -t $(APP_IMAGE) ./.
-	docker run -it -p 80:8080 $(APP_IMAGE)
+	docker push $(APP_IMAGE)
+
+	# docker run -it -p 80:8080 $(APP_IMAGE)
 	echo "------ All task is done -------"
+
+
+.PHONY:create-app
+create-app:
+	echo "Create Java App"
+	mvn package -D skipTests
+	pwd
 
 .PHONY: local-run
 local-run:
@@ -45,3 +62,8 @@ local-entrance:
 	echo "local run and enter for docker container"
 	docker exec -it $(shell docker ps | awk 'FNR == 2 {print $$1}') /bin/ash
 
+# - log in to aws elastic container registry
+# - for more about - read AWS CLI info
+.PHONY:aws-ecr-login 
+aws-ecr-login: 
+	aws ecr get-login-password --region=$(AWS_REPOSITORY_REGION) | docker login --username AWS --password-stdin $(AWS_REGISTRY_ID).dkr.ecr.$(AWS_REPOSITORY_REGION).amazonaws.com

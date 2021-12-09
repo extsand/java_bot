@@ -1,16 +1,16 @@
 variable "aws_region" {
 	type = string
-	default = "eu-central-1"
+	# default = "eu-central-1"
 }
 variable "aws_profile" {
 	type = string
 	description = "aws profile"
-	default = "default"
+	# default = "default"
 }
 data "aws_availability_zones" "available" {}
 variable "aws_az_count" {
 	type = string
-	default = "2"
+	# default = "2"
 }
 
 
@@ -18,22 +18,22 @@ variable "aws_az_count" {
 #get from output VPC module
 variable "vpc_id" {
 	type = string
-	default = "vpc-08e25b43ae98bd369"
+	# default = "vpc-08e25b43ae98bd369"
 }
 variable "public_subnet_id" {
 	type = list
-	default = ["subnet-0237ac6267e8d5f9a", "subnet-0230a66fe3b45713f"]
+	# default = ["subnet-0237ac6267e8d5f9a", "subnet-0230a66fe3b45713f"]
 }
 variable "private_subnet_id" {
 	type = list
-	default = ["subnet-0295b845bebf21e42", "subnet-0cd46e24ed8fcc710"]
+	# default = ["subnet-0295b845bebf21e42", "subnet-0cd46e24ed8fcc710"]
 }
 
 
 #Get from ECR module
 variable "ecr_repository_url" {
   type = string
-	default = "530117518858.dkr.ecr.eu-central-1.amazonaws.com/docker_app"
+	# default = "530117518858.dkr.ecr.eu-central-1.amazonaws.com/docker_app"
 }
 
 
@@ -44,12 +44,12 @@ variable "ecr_repository_url" {
 # }
 variable "aws_alb_security_group" {
 	type = string
-	default = "sg-0891f3f26d5dbbb25"
+	# default = "sg-0891f3f26d5dbbb25"
 	description = "load balancer security group"
 }
 variable "lb_target_group_arn"{
 	type = string
-	default = "arn:aws:elasticloadbalancing:eu-central-1:530117518858:targetgroup/java-bot-dev-target-group/8858ad80b91255f2"
+	# default = "arn:aws:elasticloadbalancing:eu-central-1:530117518858:targetgroup/java-bot-dev-target-group/8858ad80b91255f2"
 }
 
 
@@ -57,24 +57,24 @@ variable "lb_target_group_arn"{
 
 variable "app_name" {
 	type = string
-	default = "java-bot"
+	# default = "java-bot"
 }
 variable "environment" {
 	type = string
-	default = "dev"
+	# default = "dev"
 }
 variable "app_port" {
 	type = string
-	default = "80"	
+	# default = "80"	
 }
 variable "app_count" {
 	type = string
-	default = "1"
+	# default = "1"
 }
 
-variable "image_tag" {
+variable "app_tag" {
 	type = string
-	default = "latest"
+	# default = "latest"
 	description = "git commit like tag"
 	
 }
@@ -82,12 +82,12 @@ variable "image_tag" {
 
 variable "fargate_cpu" {
 	type = string
-	default = "512"
+	# default = "512"
 	description = "Fargate instance CPU"	
 }
 variable "fargate_memory" {
 	type = string
-	default = "1024"
+	# default = "1024"
 	description = "Fargare instance memory"
 }
 variable "container_definition_template" {

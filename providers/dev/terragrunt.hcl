@@ -16,12 +16,12 @@ locals {
 	app_port = "80"
 	app_count = 1
 	image_tag = "init"
-	APP_LOADBALANCER_LINK = "example"
-	APP_BOT_USERNAME = "examle"
-	APP_BOT_TOKEN = "example"
+	# APP_LOADBALANCER_LINK = "example"
+	# APP_BOT_USERNAME = "examle"
+	# APP_BOT_TOKEN = "example"
 
 	#FIX THIS!!!!!===========================
-	build_app_command = "make build-app APP_NAME=${local.app_name} ENV_NAME=${local.env} APP_TAG=${local.image_tag}	APP_LOADBALANCER_LINK=${local.APP_LOADBALANCER_LINK} APP_BOT_USERNAME=${local.APP_BOT_USERNAME} APP_BOT_TOKEN=${local.APP_BOT_TOKEN}"
+	build_app_command = "make build-app APP_NAME=${local.app_name} ENV_NAME=${local.env} APP_TAG=${local.image_tag}"
 
 	#repo settings
 	repo_url = "https://github.com/extsand/java_bot.ci_sample.git"

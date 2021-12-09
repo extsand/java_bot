@@ -30,9 +30,9 @@ variable "working_dir" {
 }
 
 
-# variable "build_app_command" {
-# 	type = string
-# 	# default = "make debug-mode"
-# }
+variable "build_app_command" {
+	type = string
+	# default = "make debug-mode"
+}
 
 
