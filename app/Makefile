@@ -46,6 +46,7 @@ build-app:
 local-run:
 	docker run -it -p $(LOCAL_PORT):5000 $(APP_IMAGE)
 
+
 .PHONY: local-entrance
 local-entrance:
 	echo "local run and enter for docker container"
