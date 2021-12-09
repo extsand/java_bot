@@ -40,6 +40,7 @@ variable "git_trigger_event" {
 variable "buildspec" {
 	type = string
 	default = "./../aws_codebuild/buildspec.yml"
+	
 	# default = "buildspec.yml"
 }
 
