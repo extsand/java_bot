@@ -16,21 +16,22 @@ variable "aws_az_count" {
 #get from output VPC module
 variable "vpc_id" {
 	type = string
-	default = "vpc-0a69265db7a8cd875"
+	# default = "vpc-0a69265db7a8cd875"
 }
 #get from output VPC module
 variable "public_subnet_id" {
 	type = list
-	default = ["subnet-08d09cc1a1e860d8a", "subnet-0569ffe96ac4e2870"]
+	# default = ["subnet-08d09cc1a1e860d8a", "subnet-0569ffe96ac4e2870"]
 }
 
 
+# Listener 443 migrate to Route53 module
 #get from Route53
-variable "aws_route53_certificate_arn" {
-	type = string
-	default = "arn:aws:acm:eu-central-1:530117518858:certificate/f3ae44e4-fc36-4c27-8aa6-9e5e2eb55b9a"
+# variable "aws_route53_certificate_arn" {
+# 	type = string
+# 	default = "arn:aws:acm:eu-central-1:530117518858:certificate/f3ae44e4-fc36-4c27-8aa6-9e5e2eb55b9a"
 	
-}
+# }
 
 
 

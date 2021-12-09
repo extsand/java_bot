@@ -1,0 +1,33 @@
+provider "aws" {
+  profile = var.aws_profile
+  region = var.aws_region
+}
+
+locals {
+	msg = "local build success!!!"
+}
+#create container application 
+#with null_resource
+
+resource "null_resource" "build_app" {
+	provisioner "local-exec" {
+		command = "echo ${msg}"
+
+		# command = var.build_app_command
+		# working_dir = var.working_dir
+		# environment = {
+
+		# 	AWS_REGISTRY_ID = data.aws_caller_identity.current.account_id
+		# 	AWS_REPOSITORY_REGION = var.aws_region
+		# 	AWS_PROFILE = var.aws_profile
+
+		# 	APP_NAME = var.app_name
+		# 	APP_TAG = var.app_tag
+		# 	ENV_NAME = var.environment
+		# }
+	}
+}
+
+output "app-build-status" {
+  value = "Application Build was success"
+}
