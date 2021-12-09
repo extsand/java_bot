@@ -25,7 +25,7 @@ locals {
 
 	#repo settings
 	repo_url = "https://github.com/extsand/java_bot.ci_sample.git"
-	repo_branch = "dev"
+	repo_branch = "dev-java"
 	branch_pattern = "^refs/heads/${local.repo_branch}$"
 	git_trigger_event = "PUSH"
 
