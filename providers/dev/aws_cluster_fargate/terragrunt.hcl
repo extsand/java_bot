@@ -24,15 +24,15 @@ dependency "aws_vpc"{
 dependency "aws_alb"{
 	config_path = "../aws_alb"
 	mock_outputs = {
-		# dns_name = "arn:000"
-		# zone_id = "AAAAAAA"
-		# arn = "arn:001"
-		# target_group_arn = "arn:002"
-		aws_alb = "arn:000"
 		aws_alb_security_group = "arn:001"
-		aws_alb_target_group = "arn:002"
+		lb_target_group_arn = "arn:002"
+	}
+}
 
-
+dependency "aws_ecr"{
+	config_path = "../aws_ecr"
+	mock_outputs = {
+		ecr_repository_url = "000000"
 	}
 }
 
@@ -41,8 +41,10 @@ inputs = {
 	public_subnet_id = dependency.aws_vpc.outputs.public_subnet_id
 	private_subnet_id = dependency.aws_vpc.outputs.private_subnet_id
 
-	app_load_balancer = dependency.aws_alb.outputs.aws_alb
-	lb_sg = dependency.aws_alb.outputs.aws_alb_security_group
-	lb_tg_arn = dependency.aws_alb.outputs.aws_alb_target_group
+	aws_alb_security_group = dependency.aws_alb.outputs.aws_alb_security_group
+	lb_target_group_arn = dependency.aws_alb.outputs.lb_target_group_arn
+
+	ecr_repository_url = dependency.aws_ecr.outputs.ecr_repository_url
+
 }
 

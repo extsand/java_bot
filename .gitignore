@@ -1,5 +1,6 @@
 # Custom gitignore
 credentials
+output-drafts.tf
 
 #custom 
 *.tfstate

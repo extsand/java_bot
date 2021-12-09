@@ -29,7 +29,7 @@ variable "app_domain_name" {
 #get from Load Balancer Module
 variable "lb_dns_name"{
 	type = string
-	default = "java-bot-dev-load-balancer-796335352.eu-central-1.elb.amazonaws.com"
+	default = "java-bot-dev-load-balancer-1502142239.eu-central-1.elb.amazonaws.com"
 	description = "Load Balancer dns_name"
 }
 variable "lb_zone_id" {
@@ -39,12 +39,12 @@ variable "lb_zone_id" {
 }
 variable "lb_arn" {
 	type = string
-	default = "arn:aws:elasticloadbalancing:eu-central-1:530117518858:loadbalancer/app/java-bot-dev-load-balancer/433973262268dbb7"
+	default = "arn:aws:elasticloadbalancing:eu-central-1:530117518858:loadbalancer/app/java-bot-dev-load-balancer/43e83a8bbce69f84"
 	description = "Load Balancer arn"
 }
 variable "lb_target_group_arn" {
 	type = string
-	default = "arn:aws:elasticloadbalancing:eu-central-1:530117518858:targetgroup/java-bot-dev-target-group/38554a8a5aae8367"
+	default = "arn:aws:elasticloadbalancing:eu-central-1:530117518858:targetgroup/java-bot-dev-target-group/8858ad80b91255f2"
 }
 
 

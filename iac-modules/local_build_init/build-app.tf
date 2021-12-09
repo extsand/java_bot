@@ -11,7 +11,7 @@ locals {
 
 resource "null_resource" "build_app" {
 	provisioner "local-exec" {
-		command = "echo ${msg}"
+		command = "echo ${local.msg}"
 
 		# command = var.build_app_command
 		# working_dir = var.working_dir

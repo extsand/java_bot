@@ -16,12 +16,12 @@ variable "aws_az_count" {
 #get from output VPC module
 variable "vpc_id" {
 	type = string
-	# default = "vpc-0a69265db7a8cd875"
+	default = "vpc-08e25b43ae98bd369"
 }
 #get from output VPC module
 variable "public_subnet_id" {
 	type = list
-	# default = ["subnet-08d09cc1a1e860d8a", "subnet-0569ffe96ac4e2870"]
+	default = ["subnet-0237ac6267e8d5f9a", "subnet-0230a66fe3b45713f"]
 }
 
 
@@ -48,14 +48,6 @@ variable "app_port" {
 	default = "80"
 	
 }
-
-
-
-# variable "vpc_cidr_block" {
-# 	type = string
-# 	default = "10.0.0.0/16"
-# }
-
 
 
 variable "health_check_path" {

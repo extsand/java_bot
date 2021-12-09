@@ -48,26 +48,7 @@ resource "aws_route53_record" "certificate_validation" {
 	type = tolist(aws_acm_certificate.app_certificate.domain_validation_options)[0].resource_record_type
 	zone_id = aws_route53_record.app_domain.zone_id
 	ttl = 60
-	
 }
 
 
 
-resource "aws_alb_listener" "app_listener_https" {
-	# count = var.aws_az_count
-	load_balancer_arn = var.lb_arn
-	## ==================================================================	
-	# If we use HTTPS - we will add SSL  
-	# protocol = "HTTPS"
-	port = "443"
-	protocol = "HTTPS"
-	ssl_policy = "ELBSecurityPolicy-2016-08"
-	# certificate_arn = "arn:aws:iam::xxxxxxxxxxxxxxx:server-certificate/name_of_sertificate"
-	certificate_arn = aws_acm_certificate.app_certificate.id
-		
-	default_action {
-		target_group_arn = var.lb_target_group_arn
-		type = "forward"
-	}
-
-}

@@ -8,6 +8,6 @@ include {
 
 dependencies {
 	paths = ["../aws_ecr",
-		   "../local_build_init"]
+		   		 "../local_build_init"]
 }
 

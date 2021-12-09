@@ -1,17 +1,19 @@
-output "aws_alb" {
-	value = aws_alb.app_lb
+output "lb_dns_name" {
+	# index = "0"
+	# value = aws_alb.app_lb.0.dns_name
+	value = element(aws_alb.app_lb.*.dns_name, "0")
 }
-
-output "aws_alb_target_group" {
-	value = aws_alb_target_group.app_lb_tg
+output "lb_zone_id" {
+	# value = aws_alb.app_lb.0.zone_id
+	value = element(aws_alb.app_lb.*.zone_id, "0")
 }
-
-output "aws_alb_listener" {
-	value = aws_alb_listener.app_listener
+output "lb_arn" {
+	# value = aws_alb.app_lb.0.arn
+	value = element(aws_alb.app_lb.*.arn, "0")
+	
 }
-
-output "aws_route53_certificate_arn"{
-	value = var.aws_route53_certificate_arn 
+output "lb_target_group_arn" {
+		value = element(aws_alb_target_group.app_lb_tg.*.arn, "0")
 }
 
 output "aws_alb_security_group"{
