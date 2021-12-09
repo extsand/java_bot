@@ -1,0 +1,10 @@
+private_subnet_id = [
+  "subnet-0cbd0ada9783776de",
+  "subnet-0f39ee516cb21c7ee",
+]
+public_subnet_id = [
+  "subnet-0ce56e9dbb18da1c5",
+  "subnet-0218090c16e8098cd",
+]
+vpc_id = "vpc-0cc3b439e2f8bda79"
+

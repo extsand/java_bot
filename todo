@@ -1,0 +1,27 @@
+Create modules:
+-- prebuild - create route53 and certificate first
+ or sertificat first....
+ then
+	vpc
+	load balancer
+	route53 with lb
+	inside route53 create 443 route
+	inside route53 create 80 to 433
+	fargate cluster
+	codebuild
+
+
+
+
+-+ ecr
+-+ vpc
+- load balancer
+	-- +app load balancer
+	-- +target group
+	----??registration target???
+	-- modify for HTTPS
+-+ SSL sertificat
+- Fargate cluster
+- codebuild
+- init build
+- terragrunt handler
