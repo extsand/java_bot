@@ -15,24 +15,24 @@ dependencies {
 dependency "aws_vpc"{
 	config_path = "../aws_vpc"
 	mock_outputs = {
-		vpc_id = "vpc-000"
-		public_subnet_id = ["subnet-000","subnet-001"]
-		private_subnet_id = ["subnet-002","subnet-003"]
+		vpc_id = "vpc-0000000"
+		public_subnet_id = ["subnet-0000000","subnet-0000001"]
+		private_subnet_id = ["subnet-0000002","subnet-0000003"]
 	}
 }
 
 dependency "aws_alb"{
 	config_path = "../aws_alb"
 	mock_outputs = {
-		aws_alb_security_group = "arn:001"
-		lb_target_group_arn = "arn:002"
+		aws_alb_security_group = "sg-00000000000000000"
+		lb_target_group_arn = "arn:aws:elasticloadbalancing:eu-central-1:000000000000:targetgroup/java-bot-dev-target-group/0000000000000000"
 	}
 }
 
 dependency "aws_ecr"{
 	config_path = "../aws_ecr"
 	mock_outputs = {
-		ecr_repository_url = "000000"
+				ecr_repository_url = "000000000000.dkr.ecr.eu-central-1.amazonaws.com/java-bot-dev"
 	}
 }
 
