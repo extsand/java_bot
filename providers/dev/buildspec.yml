@@ -19,12 +19,12 @@ env:
 phases:
   install:
     commands:
-      # - echo "Install environment"
+      - echo "Install environment"
       # INSTALL MAVEN
       # INSTALL JQ
       # INSTALL TERRAFORM
       # INSTALL TERRAGRUNT
-      - apt-get install maven
+      # - apt-get install maven
       - apt-get install jq
       - wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_386.zip -O terraform.zip --no-verbose
       - unzip terraform.zip
