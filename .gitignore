@@ -1,5 +1,5 @@
 # Custom gitignore
-Makefile
+credentials
 
 #custom 
 *.tfstate
