@@ -26,32 +26,31 @@ variable "git_token" {
 }
 variable "repo_url" {
 	type = string
-	default = "https://github.com/extsand/java_bot.ci_sample.git"
+	# default = "https://github.com/extsand/java_bot.ci_sample.git"
 }
 
 variable "branch_pattern" {
 	type = string
-	default = "^refs/heads/dev$"
+	# default = "^refs/heads/dev$"
 }
 variable "git_trigger_event" {
 	type = string
-	default = "PUSH"
+	# default = "PUSH"
 }
 variable "buildspec" {
 	type = string
-	default = "./../aws_codebuild/buildspec.yml"
-	
+	# default = "./../aws_codebuild/buildspec.yml"
 	# default = "buildspec.yml"
 }
 
 variable "vpc_id" {
 	type = string
-	default = "vpc-0a82f03906d393c32"
+	# default = "vpc-0a82f03906d393c32"
 }
 
 variable "private_subnet_id" {
 	type = list
-	default = ["subnet-0a1ffde84c0af844c", "subnet-07128ad5e237edc61"]
+	# default = ["subnet-0a1ffde84c0af844c", "subnet-07128ad5e237edc61"]
 
 }
 
