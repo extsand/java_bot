@@ -7,7 +7,7 @@ include {
 }
 
 dependencies {
-	path = ["../aws_vpc"]
+	paths = ["../aws_vpc"]
 }
 
 dependency "aws_vpc"{

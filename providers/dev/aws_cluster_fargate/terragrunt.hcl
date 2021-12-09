@@ -1,5 +1,5 @@
 terraform {
-	source = "../../../iac-modules//aws_route53"
+	source = "../../../iac-modules//aws_cluster_fargate"
 }
 
 include {
@@ -7,7 +7,7 @@ include {
 }
 
 dependencies {
-	path = ["../aws_vpc",
+	paths = ["../aws_vpc",
 					"../aws_alb",
 					"../aws_ecr"]
 }

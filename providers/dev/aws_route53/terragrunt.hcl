@@ -7,7 +7,7 @@ include {
 }
 
 dependencies {
-	path = ["../aws_alb"]
+	paths = ["../aws_alb"]
 }
 
 dependency "aws_alb"{

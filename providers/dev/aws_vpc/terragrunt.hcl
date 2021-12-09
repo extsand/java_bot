@@ -7,7 +7,7 @@ include {
 }
 
 dependencies {
-	path = ["../aws_ecr",
-					"../local_build_init"]
+	paths = ["../aws_ecr",
+		   "../local_build_init"]
 }
 
