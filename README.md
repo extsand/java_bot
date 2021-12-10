@@ -1,4 +1,7 @@
 # Java Telegram bot
+<p align="center">
+	<img src="https://github.com/extsand/java_bot.ci_sample/blob/dev-https/app/img/ssl_bots-min%20.png?raw=true" width="auto" height="auto">
+</p>
 CI/CD pipeline for java telegram bot
 
 Include original project from:<br> https://github.com/Kutsepalov/ZNOshka_bot <br>
